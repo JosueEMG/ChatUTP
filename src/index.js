@@ -44,4 +44,9 @@ io.on('connect', (socket) => {
         socket.broadcast.emit('chat:typing', data)
     })
 
+    socket.on('chat:color', data => {
+
+        io.sockets.emit('chat:color', data)
+    })
+
 })

@@ -6,6 +6,17 @@ const form = document.querySelector('#form')
 const inputMessage =  document.querySelector('#input-message')
 const textEvent = document.querySelector('#text-event')
 const txtSocketID = document.querySelector('#socket-id')
+const range = document.querySelector('#range')
+const body = document.querySelector('body')
+const label = document.querySelectorAll('label')
+
+console.log(label)
+
+range.addEventListener('change', (e) => {
+
+    socket.emit('chat:color', range.value)
+})
+
 
 let socketID = ''
 
@@ -108,4 +119,12 @@ inputMessage.addEventListener('keypress', (e) => {
 socket.on('chat:typing', data => {
 
     textEvent.innerHTML = `<p class="text-center text-muted"><em>${data.name} está escribiendo...</em></p>`
+})
+
+socket.on('chat:color', data => {
+
+    body.style.backgroundColor = `rgb(${(data/100)*255}, ${(data/100)*255}, ${(data/100)*255})`
+    label[0].style.color = `rgb(${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255})`
+    label[1].style.color = `rgb(${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255})`
+    range.value = data
 })
