@@ -126,5 +126,6 @@ socket.on('chat:color', data => {
     body.style.backgroundColor = `rgb(${(data/100)*255}, ${(data/100)*255}, ${(data/100)*255})`
     label[0].style.color = `rgb(${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255})`
     label[1].style.color = `rgb(${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255})`
+    label[2].style.color = `rgb(${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255}, ${((data - 100)*-1/100)*255})`
     range.value = data
 })
