@@ -49,7 +49,7 @@ socket.on('chat:message', data => {
                     </div>
                 </div>
             </div>
-                <div class="col-md-2">
+                <div class="col-md-2 pl-5">
                     <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt=""
                         class="img-circle" width="50px" height="50px">
                 </div>
