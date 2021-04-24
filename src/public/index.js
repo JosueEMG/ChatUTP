@@ -10,8 +10,6 @@ const range = document.querySelector('#range')
 const body = document.querySelector('body')
 const label = document.querySelectorAll('label')
 
-console.log(label)
-
 range.addEventListener('change', (e) => {
 
     socket.emit('chat:color', range.value)
@@ -106,8 +104,6 @@ socket.on('chat:onDisconnection', data => {
 })
 
 inputMessage.addEventListener('keypress', (e) => {
-
-    console.log('cac')
 
     let userData = {}
 
