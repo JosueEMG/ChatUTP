@@ -46,7 +46,7 @@ socket.on('chat:message', data => {
     if (data.socketID === socketID) {
 
         listMessage.innerHTML += `
-        <li class="list-group-item list-group-item-primary">
+        <li class="list-group-item" style="background-color: #FB4E4E">
             <div class=" row">
             <div class="col-md-10">
                 <div class="d-flex flex-row-reverse bd-highlight">
@@ -71,7 +71,7 @@ socket.on('chat:message', data => {
     else{ 
 
         listMessage.innerHTML += `
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-primary">
             <div class="row">
                 <div class="col-md-2">
                     <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt=""

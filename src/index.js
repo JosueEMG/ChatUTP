@@ -30,7 +30,7 @@ io.on('connect', (socket) => {
     socket.broadcast.emit('chat:onConnection', socket.id)
 
     socket.on('chat:message', data => {
-        console.log(data)
+
         io.sockets.emit('chat:message', data)
     })
 
